@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="widget widget-about">
-                        <img src="<?= asset('/assets/ratb/logo.png') ?>" alt="" width="162" height="57">
+                        <img src="{{ asset('/assets/ratb/logo.png') }}" alt="" width="162" height="57">
                         <p>Situs resmi RA Thola'al Badr. Seluruh hak cipta, tema, galeri, dan narasi tetap menjadi milik masing-masing individual/korporat.</p>
                     </div>
                     <!--widget-about end-->
@@ -15,7 +15,7 @@
                         <ul class="contact-add">
                             <li>
                                 <div class="contact-info">
-                                    <img src="<?= asset('/assets/img/icon1.png') ?>" alt="">
+                                    <img src="{{ asset('/assets/img/icon1.png') }}" alt="">
                                     <div class="contact-tt">
                                         <h4>WhatsApp</h4>
                                         <span><a href="https://wa.me/+6281223612624">+62 812 2361 2624</a></span>
@@ -25,7 +25,7 @@
                             </li>
                             <li>
                                 <div class="contact-info">
-                                    <img src="<?= asset('/assets/img/icon2.png') ?>" alt="">
+                                    <img src="{{ asset('/assets/img/icon2.png') }}" alt="">
                                     <div class="contact-tt">
                                         <h4>Jam Belajar</h4>
                                         <span>Senin - Sabtu 07:30 - 11:00</span>
@@ -35,7 +35,7 @@
                             </li>
                             <li>
                                 <div class="contact-info">
-                                    <img src="<?= asset('/assets/img/icon3.png') ?>" alt="">
+                                    <img src="{{ asset('/assets/img/icon3.png') }}" alt="">
                                     <div class="contact-tt">
                                         <h4>Alamat</h4>
                                         <span>Gunugjati, Cirebon, Jawa Barat</span>
@@ -51,11 +51,11 @@
                     <div class="widget widget-links">
                         <h3 class="widget-title">Tautan Lain</h3>
                         <ul>
-                            <li><a href="<?= route('index') ?>" title="">Home</a></li>
-                            <li><a href="<?= route('sejarah') ?>" title="">Sejarah</a></li>
-                            <li><a href="<?= route('visi_dan_misi') ?>" title="">Visi & Misi</a></li>
-                            <li><a href="<?= route('prestasi') ?>" title="">Prestasi</a></li>
-                            <li><a href="<?= route('kontak') ?>" title="">Kontak</a></li>
+                            <li><a href="{{ route('index') }}" title="">Home</a></li>
+                            <li><a href="{{ route('sejarah') }}" title="">Sejarah</a></li>
+                            <li><a href="{{ route('visi_dan_misi') }}" title="">Visi & Misi</a></li>
+                            <li><a href="{{ route('prestasi') }}" title="">Prestasi</a></li>
+                            <li><a href="{{ route('kontak') }}" title="">Kontak</a></li>
                         </ul>
                     </div>
                     <!--widget-links end-->

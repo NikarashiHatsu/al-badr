@@ -2,19 +2,19 @@
     <nav>
         <ul>
             <li>
-                <a href="<?= route('index') ?>">Beranda</a>
+                <a href="{{ route('index') }}">Beranda</a>
             </li>
             <li>
-                <a href="<?= route('sejarah') ?>">Sejarah</a>
+                <a href="{{ route('sejarah') }}">Sejarah</a>
             </li>
             <li>
-                <a href="<?= route('visi_dan_misi') ?>">Visi & Misi</a>
+                <a href="{{ route('visi_dan_misi') }}">Visi & Misi</a>
             </li>
             <li>
-                <a href="<?= route('prestasi') ?>">Prestasi</a>
+                <a href="{{ route('prestasi') }}">Prestasi</a>
             </li>
             <li>
-                <a href="<?= route('kontak') ?>">Kontak</a>
+                <a href="{{ route('kontak') }}">Kontak</a>
             </li>
         </ul>
     </nav>
