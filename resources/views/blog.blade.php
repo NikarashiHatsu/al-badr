@@ -30,8 +30,8 @@
                         <x-blog.title-less />
                         <x-blog.chat />
                         <x-blog.title-only />
-                    </div><!--blog-posts end-->
-                </div><!--blog-section end-->
+                    </div>
+                </div>
 
                 <div class="mdp-pagiation">
                     <nav aria-label="Page navigation example">
@@ -44,8 +44,9 @@
                             <li class="page-item"><a class="page-link" href="#">15</a></li>
                         </ul>
                     </nav>
-                </div><!--pagination-end-->
+                </div>
             </div>
+
             <div class="col-lg-3">
                 <div class="sidebar">
                     <div class="widget widget-search">
@@ -53,28 +54,10 @@
                             <input type="text" name="search" placeholder="Search">
                             <button type="submit"><img src="assets/img/icon4.png" alt=""></button>
                         </form>
-                    </div><!--widget-search end-->
-                    <div class="widget widget-categories">
-                        <h3 class="widget-title">Categories</h3>
-                        <ul>
-                            <li>
-                                <a href="#" title="">Teachers</a>
-                                <span>45</span>
-                            </li>
-                            <li>
-                                <a href="#" title="">School News</a>
-                                <span>13</span>
-                            </li>
-                            <li>
-                                <a href="#" title="">Lessons</a>
-                                <span>6</span>
-                            </li>
-                            <li>
-                                <a href="#" title="">Shelly</a>
-                                <span>89</span>
-                            </li>
-                        </ul>
-                    </div><!--widget-categories end-->
+                    </div>
+
+                    <x-blog.categories />
+
                     <div class="widget widget-posts">
                         <h3 class="widget-title">Latest Posts</h3>
                         <div class="wd-posts">
