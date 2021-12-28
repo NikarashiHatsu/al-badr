@@ -30,4 +30,9 @@ class PageController extends Controller
     {
         return view("kontak");
     }
+
+    public function blog()
+    {
+        return view("blog");
+    }
 }
