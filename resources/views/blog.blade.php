@@ -29,6 +29,7 @@
                         <x-blog.video />
                         <x-blog.title-less />
                         <x-blog.chat />
+                        <x-blog.title-only />
                     </div><!--blog-posts end-->
                 </div><!--blog-section end-->
 
