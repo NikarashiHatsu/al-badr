@@ -23,6 +23,7 @@
                         <x-blog.standard />
                         <x-blog.standard />
                         <x-blog.without-image />
+                        <x-blog.gallery />
                         <div class="blog-post quote-post">
                             <div class="blog-info">
                                 <span class="category">English, Teachers, Shelly</span>
@@ -35,7 +36,7 @@
                                 <h4>Polina Podolski</h4>
                                 <span>Mother</span>
                             </div>
-                        </div><!--blog-post end-->	
+                        </div><!--blog-post end-->
                         <div class="blog-post quote-post no-bg">
                             <div class="blog-info">
                                 <span class="category">English, Teachers, Shelly</span>
