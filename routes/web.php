@@ -11,6 +11,10 @@ Route::get('/blog', [\App\Http\Controllers\PageController::class, 'blog'])->name
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth', 'verified', 'auth.admin'])->name('dashboard');
+
+Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => ['auth', 'verified', 'auth.admin',]], function() {
+    Route::resource('category', \App\Http\Controllers\CategoryController::class);
+});
 
 require __DIR__.'/auth.php';
