@@ -59,23 +59,7 @@
                     <x-blog.categories />
                     <x-blog.latest-posts />
                     <x-blog.latest-comments />
-                    <div class="widget widget-archives">
-                        <h3 class="widget-title">Archives</h3>
-                        <ul>
-                            <li>
-                                <a href="#" title="">December</a>
-                            </li>
-                            <li>
-                                <a href="#" title="">January</a>
-                            </li>
-                            <li>
-                                <a href="#" title="">February</a>
-                            </li>
-                            <li>
-                                <a href="#" title="">March</a>
-                            </li>
-                        </ul>
-                    </div><!--widget-archives end-->
+                    <x-blog.archives />
                     <div class="widget widget-tags">
                         <h3 class="widget-title">Tags</h3>
                         <ul>
