@@ -9,12 +9,15 @@ Route::get('/prestasi', [\App\Http\Controllers\PageController::class, 'prestasi'
 Route::get('/kontak', [\App\Http\Controllers\PageController::class, 'kontak'])->name('kontak');
 Route::get('/blog', [\App\Http\Controllers\PageController::class, 'blog'])->name('blog');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified', 'auth.admin'])->name('dashboard');
+Route::prefix('dashboard')
+    ->as('dashboard.')
+    ->middleware(['auth', 'verified', 'auth.admin'])
+    ->group(function() {
+        Route::get('', \App\Http\Livewire\Dashboard\Index::class)->name('index');
 
-Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => ['auth', 'verified', 'auth.admin',]], function() {
-    Route::resource('category', \App\Http\Controllers\CategoryController::class);
-});
+        Route::get('category', \App\Http\Livewire\Dashboard\Category\Index::class)->name('category.index');
+        Route::get('category/create', \App\Http\Livewire\Dashboard\Category\Create::class)->name('category.create');
+        Route::get('category/{category}/edit', \App\Http\Livewire\Dashboard\Category\Edit::class)->name('category.edit');
+    });
 
 require __DIR__.'/auth.php';

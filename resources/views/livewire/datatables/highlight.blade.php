@@ -1,0 +1,1 @@
+<span class="bg-amber-600 text-white">{{ $slot }}</span>

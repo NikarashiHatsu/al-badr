@@ -1,22 +1,53 @@
 @if (session()->has('success'))
-<div class="bg-green-100 text-green-600 px-4 py-3 rounded mb-6 border border-green-300">
-    {{ session()->get('success') }}
-</div>
+    <script wire:key="{{ time() }}">
+        Swal.fire({
+            title: 'Berhasil!',
+            text: '{{ session()->get("success") }}',
+            icon: 'success',
+            timer: 3000.
+        })
+    </script>
 @endif
 
 @if (session()->has('error'))
-<div class="bg-red-100 text-red-600 px-4 py-3 rounded mb-6 border border-red-300">
-    {{ session()->get('error') }}
-</div>
+    <script wire:key="{{ time() }}">
+        Swal.fire({
+            title: 'Gagal!',
+            text: '{{ session()->get("error") }}',
+            icon: 'error',
+            timer: 3000.
+        })
+    </script>
 @endif
 
-@if ($errors->any())
-<div class="bg-red-100 text-red-600 px-4 py-3 rounded mb-6 border border-red-300">
-    Error validasi:
-    <ul class="list-disc ml-4">
-        @foreach ($errors as $error)
-            <li>{{ $error }}</li>
-        @endforeach
-    </ul>
-</div>
+@if (session()->has('confirmDeletion'))
+    <script wire:key="{{ time() }}">
+        Swal.fire({
+            title: 'Hapus data?',
+            text: 'Apakah Anda yakin ingin menghapus data ini?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Ya',
+            cancelButtonText: 'Tidak',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: 'Dikonfirmasi',
+                    text: 'Data akan dihapus sebentar lagi.',
+                    icon: 'success',
+                    timer: 3000,
+                });
+
+                return setTimeout(() => {
+                    window.Livewire.emit('delete')
+                }, 1000);
+            }
+
+            Swal.fire(
+                'Dibatalkan',
+                'Data tidak dihapus.',
+                'info',
+            );
+        });
+    </script>
 @endif

@@ -1,24 +1,19 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <title>{{ config('app.name', 'Laravel') }}</title>
-
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
-    </head>
-    <body>
-        <div class="font-sans text-gray-900 antialiased">
-            {{ $slot }}
-        </div>
-    </body>
+<html lang="en" class="bg-slate-100">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= env('app.name') ?></title>
+    <link rel="shortcut icon" href="{{{ asset('icon.svg') }}}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app-non-defer.js') }}"></script>
+</head>
+<body class="font-display antialiased text-base-content">
+    <div class="max-w-md mx-auto">
+        {{ $slot }}
+    </div>
+</body>
 </html>
