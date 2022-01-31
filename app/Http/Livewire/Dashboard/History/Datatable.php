@@ -29,7 +29,7 @@ class Datatable extends LivewireDatatable
                 ->defaultSort('desc'),
 
             Column::callback(['content'], function($content) {
-                    return "<div class='line-clamp-4' style='max-width: 300px; white-space: break-spaces'>$content</div>";
+                    return "<div class='line-clamp-3' style='max-width: 300px; white-space: break-spaces'>$content</div>";
                 })
                 ->label('Konten')
                 ->searchable(),

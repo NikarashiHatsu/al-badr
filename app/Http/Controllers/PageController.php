@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\History;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -13,7 +14,9 @@ class PageController extends Controller
 
     public function sejarah()
     {
-        return view("sejarah");
+        return view("sejarah", [
+            'histories' => History::orderBy('year', 'ASC')->get()
+        ]);
     }
 
     public function visi_dan_misi()
