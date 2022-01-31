@@ -3,6 +3,35 @@
 @tailwind utilities;
 
 @layer components {
+    /* width */
+    ::-webkit-scrollbar {
+        @apply h-2 w-2;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        @apply rounded-lg shadow-inner;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        @apply bg-green-400 dark:bg-green-500 rounded-lg transition duration-300 ease-in-out;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-green-500 dark:bg-green-600 rounded-lg;
+    }
+
+    /* Progress bar */
+    ::-webkit-progress-bar {
+        @apply bg-base-300;
+    }
+
+    ::-webkit-progress-value {
+        @apply bg-emerald-500;
+    }
+
     [x-cloak] {
         @apply hidden;
     }
