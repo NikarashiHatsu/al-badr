@@ -1,7 +1,6 @@
+require('./alpine');
 require('./bootstrap');
-
-import Alpine from 'alpinejs';
-
-window.Alpine = Alpine;
-
-Alpine.start();
+require('./chart');
+require('./jquery');
+require('./simpelightbox');
+require('./sweetalert');
