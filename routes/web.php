@@ -18,6 +18,10 @@ Route::prefix('dashboard')
         Route::get('category', \App\Http\Livewire\Dashboard\Category\Index::class)->name('category.index');
         Route::get('category/create', \App\Http\Livewire\Dashboard\Category\Create::class)->name('category.create');
         Route::get('category/{category}/edit', \App\Http\Livewire\Dashboard\Category\Edit::class)->name('category.edit');
+
+        Route::get('history', \App\Http\Livewire\Dashboard\History\Index::class)->name('history.index');
+        Route::get('history/create', \App\Http\Livewire\Dashboard\History\Create::class)->name('history.create');
+        Route::get('history/{history}/edit', \App\Http\Livewire\Dashboard\History\Edit::class)->name('history.edit');
     });
 
 require __DIR__.'/auth.php';

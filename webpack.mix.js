@@ -19,3 +19,4 @@ mix
         require('tailwindcss'),
         require('autoprefixer'),
     ])
+    .postCss('resources/css/toastui-editor.min.css', 'public/css/app.css')
