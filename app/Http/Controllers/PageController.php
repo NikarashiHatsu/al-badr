@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Achievement;
 use App\Models\History;
 use App\Models\SiteSettings;
 use Illuminate\Http\Request;
@@ -31,7 +32,9 @@ class PageController extends Controller
 
     public function prestasi()
     {
-        return view("prestasi");
+        return view("prestasi", [
+            'achievements' => Achievement::orderBy('year', 'ASC')->get(),
+        ]);
     }
 
     public function kontak()

@@ -16,20 +16,14 @@
 
 <section class="achievment-section py-5">
     <div class="container">
-        <div class="section-title text-center mb-5">
-            <h2>Tahun <span>2013</span></h2>
-            <p class="mb-4">RA Thola’al Badr adalah RA Unggulan Kabupaten Cirebon dan hingga sekarang menjadi RA Unggulan di Kecamatan Gunungjati</p>
-        </div>
-
-        <div class="section-title text-center mb-5">
-            <h2>Tahun <span>2017</span></h2>
-            <p class="mb-4">Juara I Karya Tulis Ke-RA-an tingkat Kabupaten Cirebon.</p>
-        </div>
-
-        <div class="section-title text-center mb-5">
-            <h2>Lainnya</h2>
-            <p class="mb-4">Dalam berbagai momen lomba baik antar sekolah maupun event peringatan, Santri RA Thola’al Badr selalu mendapat tempat Juara baik di Tingkat Kecamatan maupun Kabupaten,</p>
-        </div>
+        @foreach ($achievements as $achievement)
+            <div class="section-title text-center mb-5">
+                <h2>Tahun <span>{{ $achievement->year }}</span></h2>
+                <div class="prose mx-auto">
+                    {!! $achievement->content !!}
+                </div>
+            </div>
+        @endforeach
     </div>
 </section>
 @endsection

@@ -25,6 +25,10 @@ Route::prefix('dashboard')
 
         Route::get('vision-and-mission', \App\Http\Livewire\Dashboard\VisionAndMission\Index::class)->name('vision-and-mission.index');
         Route::get('vision-and-mission/{visionAndMission}/edit', \App\Http\Livewire\Dashboard\VisionAndMission\Edit::class)->name('vision-and-mission.edit');
+
+        Route::get('achievement', \App\Http\Livewire\Dashboard\Achievement\Index::class)->name('achievement.index');
+        Route::get('achievement/create', \App\Http\Livewire\Dashboard\Achievement\Create::class)->name('achievement.create');
+        Route::get('achievement/{achievement}/edit', \App\Http\Livewire\Dashboard\Achievement\Edit::class)->name('achievement.edit');
     });
 
 require __DIR__.'/auth.php';
