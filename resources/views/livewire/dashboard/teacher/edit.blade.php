@@ -80,7 +80,7 @@
 
                         @if (!$photo)
                             <div class="p-4 border rounded my-4">
-                                <img src="{{ asset($teacher->photo) }}" class="w-full rounded object-contain" />
+                                <img src="{{ asset($teacher->photo_url) }}" class="w-full rounded object-contain" />
                             </div>
                         @endif
 
