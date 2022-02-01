@@ -95,7 +95,7 @@
                     <div class="col-lg-3">
                         <div class="classes-col wow fadeInUp" data-wow-duration="1000ms">
                             <div class="class-thumb">
-                                <img src="{{ asset($teacher->photo) }}" alt="" class="w-100" style="height: 400px !important">
+                                <img src="{{ asset($teacher->photo_url) }}" alt="" class="w-100" style="height: 400px !important">
                             </div>
                             <div class="class-info">
                                 <h3>{{ $teacher->name }}</h3>
