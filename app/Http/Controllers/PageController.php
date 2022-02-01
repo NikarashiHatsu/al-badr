@@ -5,19 +5,22 @@ namespace App\Http\Controllers;
 use App\Models\Achievement;
 use App\Models\History;
 use App\Models\SiteSettings;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
     public function index()
     {
-        return view("index");
+        return view("index", [
+            'teachers' => Teacher::all(),
+        ]);
     }
 
     public function sejarah()
     {
         return view("sejarah", [
-            'histories' => History::orderBy('year', 'ASC')->get()
+            'histories' => History::orderBy('year', 'ASC')->get(),
         ]);
     }
 
