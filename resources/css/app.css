@@ -36,19 +36,31 @@
         @apply hidden;
     }
 
-    .prose.history table thead {
+    .prose.has-table table thead {
         @apply bg-slate-300;
     }
 
-    .prose.history table thead th {
+    .prose.has-table table thead th {
         @apply border border-solid border-gray-500 text-center pt-2;
     }
 
-    .prose.history table thead tr {
+    .prose.has-table table thead tr {
         @apply border-b;
     }
 
-    .prose.history table tbody td {
+    .prose.has-table table tbody td {
         @apply border border-solid border-gray-500 pl-2;
+    }
+
+    .prose.has-ordered-list ol {
+        @apply list-decimal;
+    }
+
+    .prose.has-ordered-list ol li {
+        @apply list-decimal text-left;
+    }
+
+    .prose.has-ordered-list ol li p {
+        @apply mx-4 max-w-2xl;
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\History;
+use App\Models\SiteSettings;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -21,7 +22,11 @@ class PageController extends Controller
 
     public function visi_dan_misi()
     {
-        return view("visi_dan_misi");
+        return view("visi_dan_misi", [
+            'visi' => SiteSettings::where('type', 'visi')->first(),
+            'misi' => SiteSettings::where('type', 'misi')->first(),
+            'tujuan' => SiteSettings::where('type', 'tujuan')->first(),
+        ]);
     }
 
     public function prestasi()

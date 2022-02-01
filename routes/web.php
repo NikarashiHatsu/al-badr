@@ -22,6 +22,9 @@ Route::prefix('dashboard')
         Route::get('history', \App\Http\Livewire\Dashboard\History\Index::class)->name('history.index');
         Route::get('history/create', \App\Http\Livewire\Dashboard\History\Create::class)->name('history.create');
         Route::get('history/{history}/edit', \App\Http\Livewire\Dashboard\History\Edit::class)->name('history.edit');
+
+        Route::get('vision-and-mission', \App\Http\Livewire\Dashboard\VisionAndMission\Index::class)->name('vision-and-mission.index');
+        Route::get('vision-and-mission/{visionAndMission}/edit', \App\Http\Livewire\Dashboard\VisionAndMission\Edit::class)->name('vision-and-mission.edit');
     });
 
 require __DIR__.'/auth.php';

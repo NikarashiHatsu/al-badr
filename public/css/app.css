@@ -1162,6 +1162,13 @@ html {
   --tw-shadow: 0 0 0 1px var(--border-color) !important;
 }
 
+[data-theme=lofi] *:where(.badge) {
+  border-color: var(--border-color) !important;
+  --tw-border-opacity: 1 !important;
+  --tw-text-opacity: 1 !important;
+  --tw-shadow: 0 0 0 1px var(--border-color) !important;
+}
+
 [data-theme=lofi] *:where(.card) {
   border-color: var(--border-color) !important;
   --tw-border-opacity: 1 !important;
@@ -1841,6 +1848,30 @@ html {
   align-items: center;
   justify-content: center;
 }
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-duration: .2s;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  height: 1.25rem;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-left: .563rem;
+  padding-right: .563rem;
+  --tw-bg-opacity: 1;
+  background-color: hsla(var(--n) / var(--tw-bg-opacity, 1));
+  --tw-border-opacity: 1;
+  border-color: hsla(var(--n) / var(--tw-border-opacity, 1));
+  border-width: 1px;
+  --tw-text-opacity: 1;
+  color: hsla(var(--nc) / var(--tw-text-opacity, 1));
+  border-radius: var(--rounded-badge, 1.9rem);
+}
 .btn {
   border-color: transparent;
   border-color: hsla(var(--n) / var(--tw-border-opacity, 1));
@@ -2443,6 +2474,12 @@ html {
   --tw-text-opacity: 1;
   color: hsla(var(--b2) / var(--tw-text-opacity, 1));
 }
+.btn-outline .badge {
+  --tw-border-opacity: 1;
+  border-color: hsla(var(--nf) / var(--tw-border-opacity, 1));
+  --tw-text-opacity: 1;
+  color: hsla(var(--nc) / var(--tw-text-opacity, 1));
+}
 .btn-outline.btn-primary .badge {
   --tw-bg-opacity: 1;
   background-color: hsla(var(--p) / var(--tw-bg-opacity, 1));
@@ -2451,12 +2488,47 @@ html {
   --tw-text-opacity: 1;
   color: hsla(var(--pc) / var(--tw-text-opacity, 1));
 }
+.btn-outline.btn-secondary .badge {
+  --tw-bg-opacity: 1;
+  background-color: hsla(var(--s) / var(--tw-bg-opacity, 1));
+  --tw-border-opacity: 1;
+  border-color: hsla(var(--s) / var(--tw-border-opacity, 1));
+  --tw-text-opacity: 1;
+  color: hsla(var(--sc) / var(--tw-text-opacity, 1));
+}
+.btn-outline.btn-accent .badge {
+  --tw-bg-opacity: 1;
+  background-color: hsla(var(--a) / var(--tw-bg-opacity, 1));
+  --tw-border-opacity: 1;
+  border-color: hsla(var(--a) / var(--tw-border-opacity, 1));
+  --tw-text-opacity: 1;
+  color: hsla(var(--ac) / var(--tw-text-opacity, 1));
+}
+.btn-outline .badge.outline {
+  background-color: transparent;
+  --tw-border-opacity: 1;
+  border-color: hsla(var(--nf) / var(--tw-border-opacity, 1));
+}
 .btn-outline.btn-primary .badge-outline {
   background-color: transparent;
   --tw-border-opacity: 1;
   border-color: hsla(var(--p) / var(--tw-border-opacity, 1));
   --tw-text-opacity: 1;
   color: hsla(var(--p) / var(--tw-text-opacity, 1));
+}
+.btn-outline:hover .badge {
+  --tw-bg-opacity: 1;
+  background-color: hsla(var(--b2) / var(--tw-bg-opacity, 1));
+  --tw-border-opacity: 1;
+  border-color: hsla(var(--b2) / var(--tw-border-opacity, 1));
+  --tw-text-opacity: 1;
+  color: hsla(var(--bc) / var(--tw-text-opacity, 1));
+}
+.btn-outline:hover .badge.outline {
+  --tw-border-opacity: 1;
+  border-color: hsla(var(--b2) / var(--tw-border-opacity, 1));
+  --tw-text-opacity: 1;
+  color: hsla(var(--nc) / var(--tw-text-opacity, 1));
 }
 .btn-outline.btn-primary:hover .badge {
   --tw-bg-opacity: 1;
@@ -2473,6 +2545,38 @@ html {
   border-color: hsla(var(--pc) / var(--tw-border-opacity, 1));
   --tw-text-opacity: 1;
   color: hsla(var(--pc) / var(--tw-text-opacity, 1));
+}
+.btn-outline.btn-secondary:hover .badge {
+  --tw-bg-opacity: 1;
+  background-color: hsla(var(--sc) / var(--tw-bg-opacity, 1));
+  --tw-border-opacity: 1;
+  border-color: hsla(var(--sc) / var(--tw-border-opacity, 1));
+  --tw-text-opacity: 1;
+  color: hsla(var(--s) / var(--tw-text-opacity, 1));
+}
+.btn-outline.btn-secondary:hover .badge.outline {
+  --tw-bg-opacity: 1;
+  background-color: hsla(var(--sf) / var(--tw-bg-opacity, 1));
+  --tw-border-opacity: 1;
+  border-color: hsla(var(--sc) / var(--tw-border-opacity, 1));
+  --tw-text-opacity: 1;
+  color: hsla(var(--sc) / var(--tw-text-opacity, 1));
+}
+.btn-outline.btn-accent:hover .badge {
+  --tw-bg-opacity: 1;
+  background-color: hsla(var(--ac) / var(--tw-bg-opacity, 1));
+  --tw-border-opacity: 1;
+  border-color: hsla(var(--ac) / var(--tw-border-opacity, 1));
+  --tw-text-opacity: 1;
+  color: hsla(var(--a) / var(--tw-text-opacity, 1));
+}
+.btn-outline.btn-accent:hover .badge.outline {
+  --tw-bg-opacity: 1;
+  background-color: hsla(var(--af) / var(--tw-bg-opacity, 1));
+  --tw-border-opacity: 1;
+  border-color: hsla(var(--ac) / var(--tw-border-opacity, 1));
+  --tw-text-opacity: 1;
+  color: hsla(var(--ac) / var(--tw-text-opacity, 1));
 }
 .btn:active:focus,.btn:active:hover {
   -webkit-animation: none;
@@ -3108,6 +3212,27 @@ html {
   padding: 0;
   width: 2rem;
 }
+.badge-info {
+  --tw-bg-opacity: 0.1;
+  background-color: hsla(var(--in) / var(--tw-bg-opacity, 1));
+  border-color: transparent;
+  --tw-text-opacity: 1;
+  color: hsla(var(--in) / var(--tw-text-opacity, 1));
+}
+.badge-success {
+  --tw-bg-opacity: 0.1;
+  background-color: hsla(var(--su) / var(--tw-bg-opacity, 1));
+  border-color: transparent;
+  --tw-text-opacity: 1;
+  color: hsla(var(--su) / var(--tw-text-opacity, 1));
+}
+.badge-warning {
+  --tw-bg-opacity: 0.1;
+  background-color: hsla(var(--wa) / var(--tw-bg-opacity, 1));
+  border-color: transparent;
+  --tw-text-opacity: 1;
+  color: hsla(var(--wa) / var(--tw-text-opacity, 1));
+}
 /* width */
 ::-webkit-scrollbar {
   height: 0.5rem;
@@ -3164,11 +3289,11 @@ html {
 [x-cloak] {
   display: none;
 }
-.prose.history table thead {
+.prose.has-table table thead {
   --tw-bg-opacity: 1;
   background-color: rgb(203 213 225 / var(--tw-bg-opacity));
 }
-.prose.history table thead th {
+.prose.has-table table thead th {
   border-width: 1px;
   border-style: solid;
   --tw-border-opacity: 1;
@@ -3176,15 +3301,27 @@ html {
   padding-top: 0.5rem;
   text-align: center;
 }
-.prose.history table thead tr {
+.prose.has-table table thead tr {
   border-bottom-width: 1px;
 }
-.prose.history table tbody td {
+.prose.has-table table tbody td {
   border-width: 1px;
   border-style: solid;
   --tw-border-opacity: 1;
   border-color: rgb(107 114 128 / var(--tw-border-opacity));
   padding-left: 0.5rem;
+}
+.prose.has-ordered-list ol {
+  list-style-type: decimal;
+}
+.prose.has-ordered-list ol li {
+  list-style-type: decimal;
+  text-align: left;
+}
+.prose.has-ordered-list ol li p {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  max-width: 42rem;
 }
 .pointer-events-none {
   pointer-events: none;
