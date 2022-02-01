@@ -44,8 +44,7 @@ return [
 
         'hosting' => [
             'driver' => 'local',
-            'root' => public_path('storage'),
-            'url' => env('APP_URL'),
+            'root' => public_path() . env('PUBLIC_PATH') . '/storage',
             'visibility' => 'public',
         ],
 
