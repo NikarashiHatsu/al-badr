@@ -29,6 +29,9 @@ Route::prefix('dashboard')
         Route::get('achievement', \App\Http\Livewire\Dashboard\Achievement\Index::class)->name('achievement.index');
         Route::get('achievement/create', \App\Http\Livewire\Dashboard\Achievement\Create::class)->name('achievement.create');
         Route::get('achievement/{achievement}/edit', \App\Http\Livewire\Dashboard\Achievement\Edit::class)->name('achievement.edit');
+
+        Route::get('contact', \App\Http\Livewire\Dashboard\Contact\Index::class)->name('contact.index');
+        Route::get('contact/{contact}/edit', \App\Http\Livewire\Dashboard\Contact\Edit::class)->name('contact.edit');
     });
 
 require __DIR__.'/auth.php';

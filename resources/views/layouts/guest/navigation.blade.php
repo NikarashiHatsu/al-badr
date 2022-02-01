@@ -23,9 +23,18 @@
     </nav>
     <!--nav end-->
     <ul class="social-links ml-auto">
-        <li><a href="#" title=""><i class="fab fa-facebook-f"></i></a></li>
-        <li><a href="#" title=""><i class="fab fa-linkedin-in"></i></a></li>
-        <li><a href="#" title=""><i class="fab fa-instagram"></i></a></li>
+        @if (!empty($site_settings->where('type', 'facebook')->first()->content))
+            <li><a href="{{ strip_tags($site_settings->where('type', 'facebook')->first()->content) }}" title=""><i class="fab fa-facebook-f"></i></a></li>
+        @endif
+        @if (!empty($site_settings->where('type', 'instagram')->first()->content))
+            <li><a href="{{ strip_tags($site_settings->where('type', 'instagram')->first()->content) }}" title=""><i class="fab fa-instagram"></i></a></li>
+        @endif
+        @if (!empty($site_settings->where('type', 'twitter')->first()->content))
+            <li><a href="{{ strip_tags($site_settings->where('type', 'twitter')->first()->content) }}" title=""><i class="fab fa-twitter"></i></a></li>
+        @endif
+        @if (!empty($site_settings->where('type', 'email')->first()->content))
+            <li><a href="mailto:{{ strip_tags($site_settings->where('type', 'email')->first()->content) }}" title=""><i class="fab fa-google-plus"></i></a></li>
+        @endif
     </ul>
 </div>
 <!--navigation-bar end-->

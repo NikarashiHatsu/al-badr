@@ -18,7 +18,11 @@
                                     <img src="{{ asset('assets/img/icon1.png') }}" class="w-5 h-5 mr-2 object-contain" alt="">
                                     <div class="contact-tt">
                                         <h4>WhatsApp</h4>
-                                        <span><a href="https://wa.me/+6281223612624">+62 812 2361 2624</a></span>
+                                        <span>
+                                            <a href="https://wa.me/{{ strip_tags($site_settings->where('type', 'whatsapp')->first()->content) }}">
+                                                {!! $site_settings->where('type', 'whatsapp')->first()->content !!}
+                                            </a>
+                                        </span>
                                     </div>
                                 </div>
                                 <!--contact-info end-->
@@ -38,7 +42,9 @@
                                     <img src="{{ asset('assets/img/icon3.png') }}" class="w-5 h-5 mr-2 object-contain" alt="">
                                     <div class="contact-tt">
                                         <h4>Alamat</h4>
-                                        <span>Gunugjati, Cirebon, Jawa Barat</span>
+                                        <span>
+                                            {!! $site_settings->where('type', 'short_address')->first()->content !!}
+                                        </span>
                                     </div>
                                 </div>
                                 <!--contact-info end-->
@@ -62,7 +68,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="widget widget-iframe">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15851.154543126477!2d108.544678!3d-6.673091!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5dc4cb66d30d7b07!2sRA%20THOLA%20&#39;AL%20BADR!5e0!3m2!1sen!2sus!4v1635481826708!5m2!1sen!2sus&z=18" width="100" height="100" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        {!! $site_settings->where('type', 'small_google_map')->first()->content !!}
                     </div>
                     <!--widget-iframe end-->
                 </div>
@@ -77,9 +83,18 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <ul class="social-links">
-                        <li><a href="#" title=""><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#" title=""><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="#" title=""><i class="fab fa-instagram"></i></a></li>
+                        @if (!empty($site_settings->where('type', 'facebook')->first()->content))
+                            <li><a href="{{ strip_tags($site_settings->where('type', 'facebook')->first()->content) }}" title=""><i class="fab fa-facebook-f"></i></a></li>
+                        @endif
+                        @if (!empty($site_settings->where('type', 'instagram')->first()->content))
+                            <li><a href="{{ strip_tags($site_settings->where('type', 'instagram')->first()->content) }}" title=""><i class="fab fa-instagram"></i></a></li>
+                        @endif
+                        @if (!empty($site_settings->where('type', 'twitter')->first()->content))
+                            <li><a href="{{ strip_tags($site_settings->where('type', 'twitter')->first()->content) }}" title=""><i class="fab fa-twitter"></i></a></li>
+                        @endif
+                        @if (!empty($site_settings->where('type', 'email')->first()->content))
+                            <li><a href="mailto:{{ strip_tags($site_settings->where('type', 'email')->first()->content) }}" title=""><i class="fab fa-google-plus"></i></a></li>
+                        @endif
                     </ul>
                 </div>
             </div>

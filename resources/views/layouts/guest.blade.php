@@ -23,6 +23,8 @@
 </head>
 
 <body>
+    @inject('site_settings', \App\Models\SiteSettings::class)
+
     <div class="wrapper">
 		<div class="main-section">
             <header>

@@ -39,7 +39,11 @@ class PageController extends Controller
 
     public function kontak()
     {
-        return view("kontak");
+        return view("kontak", [
+            'big_google_map' => SiteSettings::where('type', 'big_google_map')->first(),
+            'whatsapp' => SiteSettings::where('type', 'whatsapp')->first(),
+            'address' => SiteSettings::where('type', 'address')->first(),
+        ]);
     }
 
     public function blog()

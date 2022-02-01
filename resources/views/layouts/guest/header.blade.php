@@ -10,7 +10,11 @@
                 <img src="{{ asset('assets/img/icon1.png') }}" class="w-5 h-5 mr-2 object-contain" alt="">
                 <div class="contact-tt">
                     <h4>WhatsApp</h4>
-                    <span><a href="https://wa.me/+6281223612624">+62 812 2361 2624</a></span>
+                    <span>
+                        <a href="https://wa.me/{{ strip_tags($site_settings->where('type', 'whatsapp')->first()->content) }}">
+                            {!! $site_settings->where('type', 'whatsapp')->first()->content !!}
+                        </a>
+                    </span>
                 </div>
             </div><!--contact-info end-->
         </li>
@@ -28,7 +32,9 @@
                 <img src="{{ asset('assets/img/icon3.png') }}" class="w-5 h-5 mr-2 object-contain" alt="">
                 <div class="contact-tt">
                     <h4>Alamat</h4>
-                    <span>Gunungjati, Cirebon, Jawa Barat 45151</span>
+                    <span>
+                        {!! $site_settings->where('type', 'short_address')->first()->content !!}
+                    </span>
                 </div>
             </div><!--contact-info end-->
         </li>
