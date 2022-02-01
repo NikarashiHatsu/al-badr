@@ -40,7 +40,7 @@ class Create extends Component
 
         try {
             if ($this->photo) {
-                $this->teacher->photo = $this->photo->store('teachers', 'public');
+                $this->teacher->photo = $this->photo->store('teachers', 'hosting');
             }
 
             $this->teacher->save();

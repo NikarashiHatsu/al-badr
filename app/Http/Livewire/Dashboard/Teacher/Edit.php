@@ -41,9 +41,9 @@ class Edit extends Component
 
         try {
             if ($this->photo) {
-                Storage::disk('public')->delete($this->teacher->photo);
+                Storage::disk('hosting')->delete($this->teacher->photo);
 
-                $this->teacher->photo = $this->photo->store('teachers', 'public');
+                $this->teacher->photo = $this->photo->store('teachers', 'hosting');
             }
 
             $this->teacher->update();
