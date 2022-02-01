@@ -14,6 +14,7 @@
     <meta name="author" content="Aghits Nidallah">
     <meta name="keywords" content="Website RA Thola'al Badr Cirebon Gunung Jati" />
     <link rel="shortcut icon" href="<?= asset('assets/ratb/logo_only.png') ?>" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="<?= asset('css/app.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?= asset('assets/css/animate.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?= asset('assets/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?= asset('assets/css/font-awesome.min.css') ?>">

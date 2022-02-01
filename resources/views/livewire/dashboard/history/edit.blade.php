@@ -36,7 +36,7 @@
                         })"
                     >
                         <div
-                            x-on:keyup="$dispatch('input', editorInstance.getMarkdown())"
+                            x-on:keyup="$dispatch('input', editorInstance.getHTML())"
                             wire:ignore
                             id="editor"
                         ></div>

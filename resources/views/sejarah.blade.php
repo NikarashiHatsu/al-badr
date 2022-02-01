@@ -19,7 +19,9 @@
         @foreach ($histories as $history)
             <div class="section-title text-center mb-5">
                 <h2>Tahun <span>{{ $history->year }}</span></h2>
-                {!! $history->content !!}
+                <div class="prose history mx-auto">
+                    {!! $history->content !!}
+                </div>
             </div>
         @endforeach
     </div>

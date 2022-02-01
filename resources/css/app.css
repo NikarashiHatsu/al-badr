@@ -35,4 +35,20 @@
     [x-cloak] {
         @apply hidden;
     }
+
+    .prose.history table thead {
+        @apply bg-slate-300;
+    }
+
+    .prose.history table thead th {
+        @apply border border-solid border-gray-500 text-center pt-2;
+    }
+
+    .prose.history table thead tr {
+        @apply border-b;
+    }
+
+    .prose.history table tbody td {
+        @apply border border-solid border-gray-500 pl-2;
+    }
 }

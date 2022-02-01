@@ -6,8 +6,8 @@
     </div><!--logo end-->
     <ul class="contact-add d-flex flex-wrap">
         <li>
-            <div class="contact-info">
-                <img src="{{ asset('assets/img/icon1.png') }}" alt="">
+            <div class="contact-info flex flex-start">
+                <img src="{{ asset('assets/img/icon1.png') }}" class="w-5 h-5 mr-2 object-contain" alt="">
                 <div class="contact-tt">
                     <h4>WhatsApp</h4>
                     <span><a href="https://wa.me/+6281223612624">+62 812 2361 2624</a></span>
@@ -15,8 +15,8 @@
             </div><!--contact-info end-->
         </li>
         <li>
-            <div class="contact-info">
-                <img src="{{ asset('assets/img/icon2.png') }}" alt="">
+            <div class="contact-info flex flex-start">
+                <img src="{{ asset('assets/img/icon2.png') }}" class="w-5 h-5 mr-2 object-contain" alt="">
                 <div class="contact-tt">
                     <h4>Jam Belajar</h4>
                     <span>Senin - Sabtu 07:30 - 11:00</span>
@@ -24,8 +24,8 @@
             </div><!--contact-info end-->
         </li>
         <li>
-            <div class="contact-info">
-                <img src="{{ asset('assets/img/icon3.png') }}" alt="">
+            <div class="contact-info flex flex-start">
+                <img src="{{ asset('assets/img/icon3.png') }}" class="w-5 h-5 mr-2 object-contain" alt="">
                 <div class="contact-tt">
                     <h4>Alamat</h4>
                     <span>Gunungjati, Cirebon, Jawa Barat 45151</span>
