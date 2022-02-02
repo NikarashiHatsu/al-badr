@@ -36,6 +36,10 @@ Route::prefix('dashboard')
         Route::get('teacher', \App\Http\Livewire\Dashboard\Teacher\Index::class)->name('teacher.index');
         Route::get('teacher/create', \App\Http\Livewire\Dashboard\Teacher\Create::class)->name('teacher.create');
         Route::get('teacher/{teacher}/edit', \App\Http\Livewire\Dashboard\Teacher\Edit::class)->name('teacher.edit');
+
+        Route::get('blog', \App\Http\Livewire\Dashboard\Blog\Index::class)->name('blog.index');
+        Route::get('blog/create', \App\Http\Livewire\Dashboard\Blog\Create::class)->name('blog.create');
+        Route::get('blog/{blog}/edit', \App\Http\Livewire\Dashboard\Blog\Edit::class)->name('blog.edit');
     });
 
 require __DIR__.'/auth.php';
