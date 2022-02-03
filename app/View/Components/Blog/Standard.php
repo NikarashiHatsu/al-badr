@@ -16,7 +16,7 @@ class Standard extends Component
      */
     public function __construct(Blog $blog)
     {
-        $this->blog = $blog->load('creator');
+        $this->blog = $blog->load('creator', 'categories');
     }
 
     /**

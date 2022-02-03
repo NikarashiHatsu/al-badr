@@ -59,7 +59,7 @@ class PageController extends Controller
     public function blog_detail($slug)
     {
         return view('blog_detail', [
-            'blog' => Blog::where('slug', $slug)->firstOrFail(),
+            'blog' => Blog::with('categories')->where('slug', $slug)->firstOrFail(),
         ]);
     }
 }

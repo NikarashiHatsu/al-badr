@@ -10,14 +10,29 @@
                 <li><span>{{ $blog->title }}</span></li>
             </ul>
             <h2>{{ $blog->title }}</h2>
-            {{-- <span class="categry">English, Teachers, Shelly</span> --}}
-            <ul class="meta">
+            <span class="categry">
+                {{ $blog->categories->map(function($cat) { return $cat->category->name; })->join(', ') }}
+            </span>
+            <ul class="flex items-end justify-center meta">
                 <li><a href="#" title="">{{ $blog->created_at_formatted }}</a></li>
                 <li><a href="#" title="">oleh {{ $blog->creator->name }}</a></li>
                 <li>
-                    {{-- <img src="assets/img/icon13.png" alt="" />
-                    <a href="#" title="">Teachers,</a>
-                    <a href="#" title=""> School</a> --}}
+                    <div class="flex align-bottom">
+                        <img
+                            src="{{ asset('assets/img/icon13.png') }}"
+                            alt=""
+                            class="float-left align-bottom"
+                        />
+                        {!!
+                            $blog->categories->map(function($cat) {
+                                return "
+                                    <a href='#' title='' class='mr-1 !text-xs'>
+                                        {$cat->category->name}
+                                    </a>
+                                ";
+                            })->join(' ')
+                        !!}
+                    </div>
                 </li>
             </ul>
         </div><!--pager-content end-->

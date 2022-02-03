@@ -8,11 +8,11 @@
             />
         </a>
         <span class="category">
-            {{-- English, Teachers, Shelly --}}
+            {{ $blog->categories->map(function($cat) { return $cat->category->name; })->join(', ') }}
         </span>
     </div>
     <div class="blog-info">
-        <ul class="meta">
+        <ul class="flex items-end meta">
             <li>
                 <a href="#" title="">
                     {{ $blog->created_at_formatted }}
@@ -23,18 +23,24 @@
                     oleh {{ $blog->creator->name }}
                 </a>
             </li>
-            {{-- <li>
-                <img
-                    src="assets/img/icon13.png"
-                    alt=""
-                />
-                <a href="#" title="">
-                    Teachers,
-                </a>
-                <a href="#" title="">
-                    School
-                </a>
-            </li> --}}
+            <li>
+                <div class="flex align-bottom">
+                    <img
+                        src="assets/img/icon13.png"
+                        alt=""
+                        class="float-left align-bottom"
+                    />
+                    {!!
+                        $blog->categories->map(function($cat) {
+                            return "
+                                <a href='#' title='' class='mr-1 !text-xs'>
+                                    {$cat->category->name}
+                                </a>
+                            ";
+                        })->join(' ')
+                    !!}
+                </div>
+            </li>
         </ul>
         <h3>
             <a href="post.html" title="">
