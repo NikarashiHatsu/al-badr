@@ -28,7 +28,7 @@ class Blog extends Model
 
     public function getThumbnailUrlAttribute()
     {
-        return Storage::url($this->photo);
+        return Storage::url($this->thumbnail);
     }
 
     protected $fillable = [
