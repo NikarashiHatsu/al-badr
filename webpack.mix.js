@@ -20,3 +20,4 @@ mix
         require('autoprefixer'),
     ])
     .postCss('resources/css/toastui-editor.min.css', 'public/css/app.css')
+    .postCss('resources/css/choices.min.css', 'public/css/app.css')
