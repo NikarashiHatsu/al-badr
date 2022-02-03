@@ -21,7 +21,7 @@
                 <div class="blog-section p-0 posts-page">
                     <div class="blog-posts">
                         @foreach ($blogs as $blog)
-                            @if ($blog->thumbnail)
+                            @if ($blog->thumbnail_url)
                                 <x-blog.standard :blog="$blog" />
                             @else
                                 <x-blog.without-image :blog="$blog->id" />

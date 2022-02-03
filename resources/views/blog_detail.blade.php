@@ -1,7 +1,7 @@
 @extends('layouts.guest')
 
 @section('content')
-<section class="pager-section blog-version" style="background-image: url('{{ asset($blog->thumbnail) }}')">
+<section class="pager-section blog-version" style="background-image: url('{{ asset($blog->thumbnail_url) }}')">
     <div class="container">
         <div class="pager-content text-center">
             <ul>

@@ -5,6 +5,7 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Blog extends Model
 {
@@ -23,6 +24,11 @@ class Blog extends Model
     public function getCreatedAtFormattedAttribute()
     {
         return Carbon::parse($this->created_at)->locale('id_ID')->isoFormat('LLLL');
+    }
+
+    public function getThumbnailUrlAttribute()
+    {
+        return Storage::url($this->photo);
     }
 
     protected $fillable = [

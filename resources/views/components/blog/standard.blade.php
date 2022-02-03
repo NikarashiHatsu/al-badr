@@ -2,7 +2,7 @@
     <div class="blog-thumbnail">
         <a href="#" title="">
             <img
-                src="{{ asset($blog->thumbnail) }}"
+                src="{{ asset($blog->thumbnail_blog) }}"
                 alt="Gambar thumbnail {{ $blog->title }}"
                 class="w-100"
             />

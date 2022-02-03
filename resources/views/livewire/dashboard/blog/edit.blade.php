@@ -80,7 +80,7 @@
 
                         @if (!$thumbnail)
                             <div class="p-4 border rounded mb-4">
-                                <img src="{{ asset($blog->thumbnail) }}" class="w-full rounded object-contain" />
+                                <img src="{{ asset($blog->thumbnail_url) }}" class="w-full rounded object-contain" />
                             </div>
                         @endif
 
