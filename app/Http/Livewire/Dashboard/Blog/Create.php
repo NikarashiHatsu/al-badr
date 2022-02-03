@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Dashboard\Blog;
 
 use App\Models\Blog;
+use App\Models\Category;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
@@ -10,6 +11,9 @@ use Illuminate\Support\Str;
 class Create extends Component
 {
     use WithFileUploads;
+
+    public $tags = [];
+    public $blog_tags = [];
 
     public $blog;
     public $thumbnail;
@@ -51,9 +55,17 @@ class Create extends Component
             }
 
             $this->blog->save();
-            $this->reset('thumbnail');
+
+            foreach($this->blog_tags as $tag) {
+                $this->blog->categories()->insert([
+                    'blog_id' => $this->blog->id,
+                    'category_id' => $tag,
+                ]);
+            }
+
+            $this->reset('thumbnail', 'blog_tags');
             $this->_initial_blog_data();
-    } catch (\Throwable $th) {
+        } catch (\Throwable $th) {
             return session()->flash('error', 'Gagal menambah data blog: ' . $th->getMessage());
         }
 
@@ -62,6 +74,7 @@ class Create extends Component
 
     public function mount()
     {
+        $this->tags = Category::all()->pluck('name', 'id');
         $this->_initial_blog_data();
     }
 

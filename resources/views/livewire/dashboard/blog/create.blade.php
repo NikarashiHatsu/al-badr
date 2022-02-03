@@ -42,6 +42,16 @@
                         </select>
                     </div>
 
+                    <div class="col-span-12 sm:col-span-6 lg:col-span-4 xl:col-span-6 form-control">
+                        <label class="label">
+                            <span class="label-text">Tags</span>
+                        </label>
+                        <x-select.multiple
+                            wire:model="blog_tags"
+                            :tags="$tags"
+                        />
+                    </div>
+
                     <div
                         class="col-span-12"
                         wire:model.defer="blog.description"

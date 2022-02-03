@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') . "?v=" . config('app.version') }}" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <script src="{{ asset('js/app.js') . "?v=" . config('app.version') }}" defer></script>
+    <script src="{{ asset('js/app-non-defer.js') . "?v=" . config('app.version') }}"></script>
 
     @livewireStyles()
 </head>

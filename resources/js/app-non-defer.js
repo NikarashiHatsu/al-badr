@@ -1,1 +1,2 @@
+require('./choices');
 require('./jquery');

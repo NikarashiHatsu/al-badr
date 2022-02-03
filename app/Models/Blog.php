@@ -15,6 +15,11 @@ class Blog extends Model
         return $this->belongsTo(User::class, 'creator_id');
     }
 
+    public function categories()
+    {
+        return $this->hasMany(BlogCategory::class);
+    }
+
     public function getCreatedAtFormattedAttribute()
     {
         return Carbon::parse($this->created_at)->locale('id_ID')->isoFormat('LLLL');

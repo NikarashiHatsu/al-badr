@@ -29,6 +29,7 @@
                             class="input input-bordered"
                         >
                     </div>
+
                     <div class="col-span-12 sm:col-span-6 lg:col-span-4 xl:col-span-3 form-control">
                         <label class="label">
                             <span class="label-text">Status</span>
@@ -40,6 +41,16 @@
                             <option value="0">Draft</option>
                             <option value="1">Terbit</option>
                         </select>
+                    </div>
+
+                    <div class="col-span-12 sm:col-span-6 lg:col-span-4 xl:col-span-6 form-control">
+                        <label class="label">
+                            <span class="label-text">Tags</span>
+                        </label>
+                        <x-select.multiple
+                            wire:model="blog_tags"
+                            :tags="$tags"
+                        />
                     </div>
 
                     <div

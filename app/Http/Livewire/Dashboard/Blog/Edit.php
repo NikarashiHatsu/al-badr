@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Dashboard\Blog;
 
 use App\Models\Blog;
+use App\Models\Category;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Livewire\Component;
@@ -11,6 +12,10 @@ use Livewire\WithFileUploads;
 class Edit extends Component
 {
     use WithFileUploads;
+
+    public $tags = [];
+    public $old_blog_tags = [];
+    public $blog_tags = [];
 
     public $blog;
     public $thumbnail;
@@ -53,6 +58,17 @@ class Edit extends Component
                 $this->blog->thumbnail = $this->thumbnail->store('blogs', config('filesystems.default'));
             }
 
+            if (array_diff($this->blog_tags)) {
+                $this->blog->categories()->delete();
+
+                foreach($this->blog_tags as $tag) {
+                    $this->blog->categories()->insert([
+                        'blog_id' => $this->blog->id,
+                        'category_id' => $tag,
+                    ]);
+                }
+            }
+
             $this->blog->save();
             $this->reset('thumbnail');
         } catch (\Throwable $th) {
@@ -64,6 +80,9 @@ class Edit extends Component
 
     public function mount(Blog $blog)
     {
+        $this->tags = Category::all()->pluck('name', 'id');
+        $this->blog_tags = $blog->categories()->pluck('category_id')->toArray();
+        $this->old_blog_tags = $this->blog_tags;
         $this->blog = $blog;
     }
 
