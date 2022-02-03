@@ -8,6 +8,7 @@ Route::get('/visi_dan_misi', [\App\Http\Controllers\PageController::class, 'visi
 Route::get('/prestasi', [\App\Http\Controllers\PageController::class, 'prestasi'])->name('prestasi');
 Route::get('/kontak', [\App\Http\Controllers\PageController::class, 'kontak'])->name('kontak');
 Route::get('/blog', [\App\Http\Controllers\PageController::class, 'blog'])->name('blog');
+Route::get('/blog/{slug}', [\App\Http\Controllers\PageController::class, 'blog_detail'])->name('blog_detail');
 
 Route::prefix('dashboard')
     ->as('dashboard.')

@@ -6,7 +6,7 @@
         <div class="pager-content text-center">
             <h2>Blog</h2>
             <ul>
-                <li><a href="#" title="">Home</a></li>
+                <li><a href="{{ route('index') }}" title="">Home</a></li>
                 <li><span>Blog</span></li>
             </ul>
         </div><!--pager-content end-->
@@ -20,20 +20,17 @@
             <div class="col-lg-8">
                 <div class="blog-section p-0 posts-page">
                     <div class="blog-posts">
-                        <x-blog.standard />
-                        <x-blog.standard />
-                        <x-blog.without-image />
-                        <x-blog.gallery />
-                        <x-blog.quote />
-                        <x-blog.quote-no-bg />
-                        <x-blog.video />
-                        <x-blog.title-less />
-                        <x-blog.chat />
-                        <x-blog.title-only />
+                        @foreach ($blogs as $blog)
+                            @if ($blog->thumbnail)
+                                <x-blog.standard :blog="$blog" />
+                            @else
+                                <x-blog.without-image :blog="$blog->id" />
+                            @endif
+                        @endforeach
                     </div>
                 </div>
 
-                <div class="mdp-pagiation">
+                {{-- <div class="mdp-pagiation">
                     <nav aria-label="Page navigation example">
                         <ul class="pagination">
                             <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -44,10 +41,10 @@
                             <li class="page-item"><a class="page-link" href="#">15</a></li>
                         </ul>
                     </nav>
-                </div>
+                </div> --}}
             </div>
 
-            <div class="col-lg-3">
+            {{-- <div class="col-lg-3">
                 <div class="sidebar">
                     <div class="widget widget-search">
                         <form>
@@ -62,7 +59,7 @@
                     <x-blog.archives />
                     <x-blog.tags />
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </section>

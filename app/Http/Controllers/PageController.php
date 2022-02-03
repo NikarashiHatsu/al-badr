@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Achievement;
+use App\Models\Blog;
 use App\Models\History;
 use App\Models\SiteSettings;
 use App\Models\Teacher;
-use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
@@ -51,6 +51,15 @@ class PageController extends Controller
 
     public function blog()
     {
-        return view("blog");
+        return view("blog", [
+            'blogs' => Blog::where('is_published', true)->orderBy('created_at', 'DESC')->get(),
+        ]);
+    }
+
+    public function blog_detail($slug)
+    {
+        return view('blog_detail', [
+            'blog' => Blog::where('slug', $slug)->firstOrFail(),
+        ]);
     }
 }

@@ -2,18 +2,21 @@
 
 namespace App\View\Components\Blog;
 
+use App\Models\Blog;
 use Illuminate\View\Component;
 
 class Standard extends Component
 {
+    public $blog;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Blog $blog)
     {
-        //
+        $this->blog = $blog->load('creator');
     }
 
     /**

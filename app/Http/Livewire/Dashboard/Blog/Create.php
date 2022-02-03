@@ -5,48 +5,55 @@ namespace App\Http\Livewire\Dashboard\Blog;
 use App\Models\Blog;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Str;
 
 class Create extends Component
 {
     use WithFileUploads;
 
     public $blog;
-    public $photo;
+    public $thumbnail;
 
     protected $rules = [
-        'blog.name' => ['required', 'string'],
-        'blog.place_of_birth' => ['required', 'string'],
-        'blog.date_of_birth' => ['required', 'date'],
-        'blog.phone_number' => ['required', 'string'],
+        'blog.creator_id' => ['required', 'exists:users,id'],
+        'blog.slug' => ['required', 'string'],
+        'blog.title' => ['required', 'string'],
+        'blog.description' => ['required', 'string'],
+        'blog.is_published' => ['required', 'boolean'],
+        'blog.view_count' => ['required', 'integer'],
     ];
 
     protected $messages = [
-        'blog.name.required' => 'Nama blog harus diisi.',
-        'blog.place_of_birth.required' => 'Tempat lahir harus diisi.',
-        'blog.date_of_birth.required' => 'Tanggal lahir harus diisi.',
-        'blog.phone_number.required' => 'Nomor telepon harus diisi.',
+        'blog.creator_id.required' => 'ID penulis harus diisi.',
+        'blog.creator_id.exists' => 'ID penulis tidak ditemukan.',
+        'blog.slug.required' => 'Slug harus diisi.',
+        'blog.title.required' => 'Judul harus diisi.',
+        'blog.description.required' => 'Deskripsi harus diisi.',
+        'blog.is_published.required' => 'Status harus diisi.',
+        'blog.view_count.required' => 'Jumlah pembaca harus diisi.',
     ];
 
-    public function updatedPhoto()
+    public function updatedThumbnail()
     {
         $this->validate([
-            'photo' => 'image|max:1024',
+            'thumbnail' => 'image|max:1024',
         ]);
     }
 
     public function store()
     {
+        $this->blog->slug = date('Y-m-d-') . Str::slug($this->blog->title);
         $this->validate();
 
         try {
-            if ($this->photo) {
-                $this->blog->photo = $this->photo->store('blogs', 'hosting');
+            if ($this->thumbnail) {
+                $this->blog->thumbnail = $this->thumbnail->store('blogs', config('filesystems.default'));
             }
 
             $this->blog->save();
-            $this->blog = new Blog();
-            $this->reset('photo');
-        } catch (\Throwable $th) {
+            $this->reset('thumbnail');
+            $this->_initial_blog_data();
+    } catch (\Throwable $th) {
             return session()->flash('error', 'Gagal menambah data blog: ' . $th->getMessage());
         }
 
@@ -55,11 +62,21 @@ class Create extends Component
 
     public function mount()
     {
-        $this->blog = new Blog();
+        $this->_initial_blog_data();
     }
 
     public function render()
     {
         return view('livewire.dashboard.blog.create');
+    }
+
+    private function _initial_blog_data()
+    {
+        $this->blog = new Blog([
+            'creator_id' => auth()->user()->id, // The user ID
+            'is_published' => 0, // Draft
+            'thumbnail' => '', // Thumbnail URL
+            'view_count' => 0, // View count
+        ]);
     }
 }
