@@ -1,8 +1,8 @@
 <div class="blog-post">
     <div class="blog-thumbnail">
-        <a href="#" title="">
+        <a href="{{ route('blog_detail', $blog->slug) }}" title="">
             <img
-                src="{{ asset($blog->thumbnail_blog) }}"
+                src="{{ asset($blog->thumbnail_url) }}"
                 alt="Gambar thumbnail {{ $blog->title }}"
                 class="w-100"
             />
@@ -14,7 +14,7 @@
     <div class="blog-info">
         <ul class="flex items-end meta">
             <li>
-                <a href="#" title="">
+                <a>
                     {{ $blog->created_at_formatted }}
                 </a>
             </li>
@@ -43,7 +43,7 @@
             </li>
         </ul>
         <h3>
-            <a href="post.html" title="">
+            <a href="{{ route('blog_detail', $blog->slug) }}" title="">
                 {{ $blog->title }}
             </a>
         </h3>
