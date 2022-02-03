@@ -43,7 +43,7 @@ class Edit extends Component
             if ($this->photo) {
                 Storage::disk('hosting')->delete($this->teacher->photo);
 
-                $this->teacher->photo = $this->photo->store('teachers', 'hosting');
+                $this->teacher->photo = $this->photo->store('teachers', config('filesystems.default'));
             }
 
             $this->teacher->update();
