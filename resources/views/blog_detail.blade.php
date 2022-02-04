@@ -1,5 +1,22 @@
 @extends('layouts.guest')
 
+@section('meta')
+{{-- Facebook --}}
+<meta property="og:title" content="{{ $blog->title }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ route('blog_detail', $blog->slug) }}" />
+<meta property="og:image" content="{{ asset($blog->thumbnail_url) }}" />
+<meta property="og:description" content="{{ mb_strimwidth($blog->description, 128) }}">
+<meta property="og:site_name" content="{{ config('app.name') }}">
+
+{{-- Twitter --}}
+<meta name="twitter:title" content="{{ $blog->title }} ">
+<meta name="twitter:description" content="{{ mb_strimwidth($blog->description, 128) }}">
+<meta name="twitter:image" content="{{ asset($blog->thumbnail_url) }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image:alt" content="{{ $blog->title }}">
+@endsection
+
 @section('content')
 <section class="pager-section blog-version" style="background-image: url('{{ asset($blog->thumbnail_url) }}')">
     <div class="container">
