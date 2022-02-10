@@ -1,6 +1,6 @@
 <div class="header-content d-flex flex-wrap align-items-center">
     <div class="logo">
-        <a href="index.html" title="">
+        <a href="{{ route('index') }}" title="">
             <img src="{{ asset('assets/ratb/logo.png') }}" alt="" width="162" height="57">
         </a>
     </div><!--logo end-->

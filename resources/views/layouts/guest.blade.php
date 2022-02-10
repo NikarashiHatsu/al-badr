@@ -14,13 +14,13 @@
     <meta name="author" content="Aghits Nidallah">
     <meta name="keywords" content="Website RA Thola'al Badr Cirebon Gunung Jati" />
     @yield('meta')
-    <link rel="shortcut icon" href="<?= asset('assets/ratb/logo_only.png') ?>" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="<?= asset('css/app.css') ?>">
-    <link rel="stylesheet" type="text/css" href="<?= asset('assets/css/animate.css') ?>">
-    <link rel="stylesheet" type="text/css" href="<?= asset('assets/css/bootstrap.min.css') ?>">
-    <link rel="stylesheet" type="text/css" href="<?= asset('assets/css/font-awesome.min.css') ?>">
-    <link rel="stylesheet" type="text/css" href="<?= asset('assets/css/main.css') ?>">
-    <link rel="stylesheet" type="text/css" href="<?= asset('assets/css/responsive.css') ?>">
+    <link rel="shortcut icon" href="{{ asset('assets/ratb/logo_only.png') . '?v=' . config('app.version') }}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') . '?v=' . config('app.version') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.css') . '?v=' . config('app.version') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') . '?v=' . config('app.version') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.min.css') . '?v=' . config('app.version') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.css') . '?v=' . config('app.version') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.css') . '?v=' . config('app.version') }}">
 </head>
 
 <body>

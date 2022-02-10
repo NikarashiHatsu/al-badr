@@ -15,5 +15,8 @@
         <li>
             <a href="{{ route('kontak') }}">Kontak</a>
         </li>
+        <li>
+            <a href="{{ route('blog') }}">Blog</a>
+        </li>
     </ul>
 </div>

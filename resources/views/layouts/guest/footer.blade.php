@@ -62,6 +62,7 @@
                             <li><a href="{{ route('visi_dan_misi') }}" title="">Visi & Misi</a></li>
                             <li><a href="{{ route('prestasi') }}" title="">Prestasi</a></li>
                             <li><a href="{{ route('kontak') }}" title="">Kontak</a></li>
+                            <li><a href="{{ route('blog') }}" title="">Blog</a></li>
                         </ul>
                     </div>
                     <!--widget-links end-->
